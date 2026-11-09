@@ -1,0 +1,15 @@
+# Entity normalization: canonical name -> variants (lowercase). Extended in M4.
+datasets:
+  sift1m: [sift-1m, sift 1m, sift1m]
+  gist1m: [gist-1m, gist 1m, gist1m]
+  deep1b: [deep-1b, deep1b, deep 1b]
+  tpc-h: [tpch, tpc-h, tpc h]
+  tpc-ds: [tpcds, tpc-ds]
+baselines:
+  hnsw: [hnsw, hierarchical navigable small world]
+  diskann: [diskann, disk-ann, vamana]
+  lru: [lru, least recently used]
+metrics:
+  recall@10: [recall@10, recall at 10, recall 10]
+  qps: [qps, queries per second]
+  hit ratio: [hit ratio, hit rate, cache hit rate]

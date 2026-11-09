@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "research-matcher"
+version = "0.1.0"
+description = "Cross-university CS paper store + local RAG engine"
+requires-python = ">=3.11"
+dependencies = [
+  "pydantic", "httpx", "qdrant-client", "python-dotenv", "tenacity",
+  "rapidfuzz", "prompt_toolkit", "typer", "rich", "pyyaml", "numpy",
+]
+
+[project.scripts]
+research-matcher = "research_matcher.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

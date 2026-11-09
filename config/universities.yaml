@@ -1,0 +1,30 @@
+universities:
+  - {short: ETH,  name: ETH Zurich, country: CH, ror: 05a28rw58, openalex_id: I35440088, csrankings_name: ETH Zurich, aliases: [eth, ethz, eth zürich, eth zurich]}
+  - {short: EPFL, name: École Polytechnique Fédérale de Lausanne, country: CH, ror: 02s376052, openalex_id: I5124864, csrankings_name: EPFL, aliases: [epfl, lausanne]}
+  - {short: TUM,  name: Technical University of Munich, country: DE, ror: 02kkvpp62, openalex_id: I62916508, csrankings_name: TU Munich, aliases: [tum, tu munich, tu münchen]}
+  - {short: OXF,  name: University of Oxford, country: GB, ror: 052gg0110, openalex_id: I40120149, csrankings_name: University of Oxford, aliases: [oxford, oxf]}
+  - {short: CAM,  name: University of Cambridge, country: GB, ror: 013meh722, openalex_id: I241749, csrankings_name: University of Cambridge, aliases: [cambridge, cam]}
+  - {short: IMP,  name: Imperial College London, country: GB, ror: 041kmwe10, openalex_id: I47508984, csrankings_name: Imperial College London, aliases: [imperial, icl, imp]}
+  - {short: UCL,  name: University College London, country: GB, ror: 02jx3x895, openalex_id: I45129253, csrankings_name: University College London, aliases: [ucl]}
+  - {short: CMU,  name: Carnegie Mellon University, country: US, ror: 05x2bcf33, openalex_id: I74973139, csrankings_name: Carnegie Mellon University, aliases: [cmu, carnegie mellon]}
+  - {short: COL,  name: Columbia University, country: US, ror: 00hj8s172, openalex_id: I78577930, csrankings_name: Columbia University, aliases: [columbia, col]}
+  - {short: UCSD, name: University of California San Diego, country: US, ror: 0168r3w48, openalex_id: I36258959, csrankings_name: "Univ. of California - San Diego", aliases: [ucsd, uc san diego]}
+  - {short: GT,   name: Georgia Institute of Technology, country: US, ror: 01zkghx44, openalex_id: I130701444, csrankings_name: Georgia Institute of Technology, aliases: [gt, gatech, georgia tech]}
+  - {short: UofT, name: University of Toronto, country: CA, ror: 03dbr7087, openalex_id: I185261750, csrankings_name: University of Toronto, aliases: [uoft, u of t, toronto]}
+  - {short: UW,   name: University of Waterloo, country: CA, ror: 01aff2v68, openalex_id: I151746483, csrankings_name: University of Waterloo, aliases: [waterloo, uwaterloo, uw]}
+  - {short: UBC,  name: University of British Columbia, country: CA, ror: 03rmrcq20, openalex_id: I141945490, csrankings_name: University of British Columbia, aliases: [ubc]}
+  - {short: SFU,  name: Simon Fraser University, country: CA, ror: 0213rcc28, openalex_id: I18014758, csrankings_name: Simon Fraser University, aliases: [sfu, simon fraser]}
+  - {short: NUS,  name: National University of Singapore, country: SG, ror: 01tgyzw49, openalex_id: I165932596, csrankings_name: National University of Singapore, aliases: [nus]}
+  - {short: NTU,  name: Nanyang Technological University, country: SG, ror: 02e7b5302, openalex_id: I172675005, csrankings_name: Nanyang Technological University, aliases: [ntu, nanyang]}
+
+country_aliases:
+  CH: [switzerland, swiss, ch]
+  DE: [germany, german, de]
+  GB: [uk, united kingdom, britain, england, gb]
+  US: [usa, us, united states, america]
+  CA: [canada, canadian, ca]
+  SG: [singapore, sg]
+regions:
+  europe: [CH, DE, GB]
+  north america: [US, CA]
+  asia: [SG]

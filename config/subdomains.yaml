@@ -1,0 +1,41 @@
+subdomains:
+  - id: SysML_RL_Caching
+    definition: >
+      Reinforcement learning or learned models applied to systems problems: caching (Redis, key-value stores,
+      cache replacement/eviction), database query optimization and cardinality estimation, microservice load
+      balancing, autoscaling, and cloud/cluster/job scheduling.
+    prototypes:
+      - Reinforcement learning for cache replacement and eviction policies in key-value stores.
+      - Learned query optimizer and cardinality estimation for relational database systems.
+      - Deep reinforcement learning for microservice load balancing and autoscaling in the cloud.
+      - Learned cluster and job scheduling for datacenter workloads.
+    lexicon: ['reinforcement learning', 'learned', 'cach(e|ing)', 'cache (replacement|eviction)', 'query optimi[sz](er|ation)', 'cardinality estimation', 'load balanc', 'autoscal', '(cluster|job) scheduling']
+    openalex_query: '("reinforcement learning" OR "learned") AND (caching OR "cache replacement" OR "cache eviction" OR "query optimization" OR "query optimizer" OR "cardinality estimation" OR "load balancing" OR autoscaling OR "cluster scheduling" OR "job scheduling")'
+  - id: Edge_RAG_Vector_Systems
+    definition: >
+      Systems for vector retrieval and retrieval-augmented generation: approximate nearest neighbor indexing
+      (HNSW, DiskANN), hybrid vector-relational queries, KV-cache quantization/compression for LLM inference,
+      and low-latency edge or local on-device RAG.
+    prototypes:
+      - Graph-based approximate nearest neighbor search indexes such as HNSW and DiskANN.
+      - Filtered and hybrid vector-relational query processing in vector databases.
+      - KV-cache quantization and compression for efficient LLM inference.
+      - Low-latency on-device and edge retrieval-augmented generation systems.
+    lexicon: ['approximate nearest neighbo', 'HNSW', 'DiskANN', 'vector (database|search|index)', 'product quantization', 'KV[- ]cache', 'retrieval[- ]augmented']
+    openalex_query: '"approximate nearest neighbor" OR HNSW OR DiskANN OR "vector database" OR "vector search" OR "product quantization" OR "KV cache" OR "retrieval-augmented generation"'
+  - id: Spatio_Temporal_MARL
+    definition: >
+      Multi-agent reinforcement learning, graph neural networks and learned spatial indexes applied to vehicle
+      routing, fleet dispatch, ride-hailing, emergency response and spatio-temporal resource allocation.
+    prototypes:
+      - Multi-agent reinforcement learning for ride-hailing fleet dispatch.
+      - Graph neural networks for vehicle routing problems.
+      - Learned spatial indexes for spatio-temporal data.
+      - Emergency resource allocation with multi-agent reinforcement learning.
+    lexicon: ['multi-agent reinforcement', 'MARL', 'graph neural network', 'learned (spatial )?index', 'vehicle routing', 'dispatch', 'fleet', 'ride-hailing', 'spatio-?temporal']
+    openalex_query: '("multi-agent reinforcement learning" OR "graph neural network" OR "learned index") AND ("vehicle routing" OR dispatch OR fleet OR "ride-hailing" OR "resource allocation" OR emergency OR spatio-temporal)'
+  - id: none
+    definition: Everything else. Stored and searchable by meaning, but not LLM-extracted.
+    prototypes: []
+    lexicon: []
+    openalex_query: ""

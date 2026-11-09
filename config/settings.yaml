@@ -1,0 +1,45 @@
+models: {llm: "gemma3:4b-it-qat", embed: "BAAI/bge-m3", ollama_url: "http://localhost:11434"}
+paths: {db: "data/papers.db", qdrant: "data/qdrant_storage", data_dir: "data"}
+harvest:
+  from_publication_date: "2025-01-01"
+  types: [conference-paper, preprint]
+  field: "fields/17"
+  exclude_subfields: []
+  include_proceedings_journals: true
+  proceedings_sources: [S4387289859, S4210226185, S4210216081, S4210193547, S4387290834, S4404663975]
+  keyword_supplement: true
+  per_page: 100
+  min_credits_remaining: 500
+enrich: {hf_code_lookup: true, github_search: false}
+csrankings_url: "https://raw.githubusercontent.com/emeryberger/CSrankings/gh-pages/csrankings.csv"
+semantic_scholar:
+  enabled: true
+  base_url: "https://api.semanticscholar.org/graph/v1"
+  rate_limit_rps: 1.0
+  min_interval_s: 1.05
+  batch_size: 500
+  backoff: {base_s: 2, cap_s: 60, max_attempts: 6, jitter: true}
+  pass1_fields: "externalIds,title,venue,publicationVenue,year,publicationTypes,abstract,tldr,citationCount,influentialCitationCount,openAccessPdf"
+  pass2_specter: true
+  title_match_fallback: false
+http:
+  openalex_base_url: "https://api.openalex.org"
+  openalex_max_rps: 10
+prefilter:
+  tau: {SysML_RL_Caching: 0.58, Edge_RAG_Vector_Systems: 0.58, Spatio_Temporal_MARL: 0.58}  # calibrated M3 on 135 gold labels
+  kw_min: 2
+  target_survivors: [2000, 5000]
+extract: {num_ctx: 4096, num_predict: 640, temperature: 0.0, seed: 42, prompt_version: "x4"}
+similarity:
+  weights: {dense_abstract: .20, dense_composite: .17, title_dense: .07, title_lexical: .04, sparse_lexical: .07,
+            micro_topic: .06, openalex_topics: .06, keywords: .04, datasets: .07, baselines: .07, metrics: .03,
+            biblio_coupling: .05, citation_link: .02, specter2: .05}
+  tau_strong: 0.60          # M6: high-confidence tier (held-out precision 70%, n=10); used for clusters
+  tau_close: 0.54   # M6: best-F1 on data/gold/pairs.csv with calibrated weights
+  subdomain_mismatch_penalty: 0.85
+  mmr_lambda: 0.75
+  per_university_limit: 3
+  min_universities: 3
+rag: {tau_query: 0.40, floor_query: 0.33, min_prof_papers: 2, select_mode: diverse, plan_num_ctx: 8192, num_ctx: 12288, num_predict: 768, temperature: 0.2, top_p: 0.9, repeat_penalty: 1.1, context_papers: 12, embed_device: cpu}
+
+index: {backend: numpy}   # numpy = exact flat index (filtered p95 < 300 ms); qdrant = embedded Qdrant (local mode has no payload indexes)
