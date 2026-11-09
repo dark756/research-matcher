@@ -63,7 +63,7 @@ Measured on this machine (RTX 3050 6 GB Laptop, Windows 11):
 
 Stage timings from the last full run: harvest 16.3 min, enrich 1.9, prefilter 13.6, extract 288.8, extract-post 10.6, index 1.4, match 9.1, report 2.5.
 
-**Known limits.** Under a strict rubric only 42% of matches above the "close" threshold were judged close on a held-out sample (98% close or related), so treat pairs below the strong threshold as "related". Claims are parsed from abstracts only and must be checked against the papers. Gold labels were produced with Claude assistance and the thresholds were tuned on them.
+**Known limits.** Under a strict rubric only 42% of matches above the "close" threshold were judged close on a held-out sample (98% close or related), so treat pairs below the strong threshold as "related". Claims are parsed from abstracts only and must be checked against the papers. Gold labels were produced by a language model and the thresholds were tuned on them.
 
 ## How to run it
 
