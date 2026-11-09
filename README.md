@@ -34,7 +34,6 @@ CSRankings ──► professor verification ────────────
 | Store | SQLite (FTS5 for BM25) and a NumPy flat vector index. An embedded-Qdrant backend is included but off by default (see results) |
 | Answers | Every `[P#]` citation is validated, and university, professor and link fields come from the database, not the model |
 
-Full design: [plan.md](plan.md). Planned multi-version extension: [re_plan.md](re_plan.md).
 
 ## Hardware constraints
 
@@ -111,6 +110,4 @@ Individual stages: `init harvest enrich prefilter extract extract-post index mat
 src/research_matcher/  harvest/ enrich/ embed/ extract/ index/ match/ similarity/ rag/ report/
 config/                universities, subdomains, aliases, settings
 tests/                 pytest suite
-plan.md  re_plan.md    design reference and next-step plan
-BENCHMARK_CANDIDATES.md  example generated report
 ```
